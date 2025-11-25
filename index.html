@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Studio InContexxt — Traduceri & Meditații</title>
+  <meta name="description" content="Studio InContexxt oferă servicii profesionale de traducere și meditații pentru elevi și studenți. Calitate, promptitudine și prețuri corecte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --white: #ffffff;
+      --magenta: #ff0080; /* magenta */
+      --dark-blue: #0b2545; /* albastru inchis */
+      --muted: #6b7280;
+      --radius: 12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--white), #f7f9fc);
+      color:var(--dark-blue);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    /* Header */
+    .header{
+      background:var(--white);
+      border-bottom:1px solid rgba(11,37,69,0.06);
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(4px);
+    }
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--magenta),var(--dark-blue));
+      display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;font-size:18px
+    }
+    .brand h1{margin:0;font-size:18px}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--dark-blue);text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;padding:48px 0;align-items:center}
+    .hero .eyebrow{display:inline-block;background:linear-gradient(90deg,rgba(255,0,128,0.08),rgba(11,37,69,0.06));color:var(--magenta);padding:6px 12px;border-radius:999px;font-weight:600;margin-bottom:18px}
+    .hero h2{font-size:36px;margin:0 0 18px}
+    .hero p{margin:0 0 24px;color:var(--muted)}
+    .cta-row{display:flex;gap:12px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer}
+    .btn-primary{background:var(--magenta);color:var(--white);box-shadow:0 6px 18px rgba(255,0,128,0.12)}
+    .btn-ghost{background:transparent;border:2px solid rgba(11,37,69,0.08);color:var(--dark-blue)}
+
+    /* Card */
+    .card{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:0 6px 20px rgba(11,37,69,0.06)}
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
+    .service h3{margin:0 0 8px}
+    .service p{margin:0;color:var(--muted)}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0}
+    .testimonial{padding:16px;border-radius:10px;background:linear-gradient(180deg,rgba(11,37,69,0.02),var(--white));border:1px solid rgba(11,37,69,0.03)}
+    .small{font-size:14px;color:var(--muted)}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea,select{padding:12px;border-radius:8px;border:1px solid rgba(11,37,69,0.12);font-size:15px}
+    textarea{min-height:120px;resize:vertical}
+    .foot{padding:28px 0;color:var(--muted);text-align:center}
+
+    /* Footer */
+    footer{border-top:1px solid rgba(11,37,69,0.04);background:var(--white)}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .testimonials{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
+      nav ul{display:none}
+      .mobile-nav-toggle{display:inline-block}
+    }
+    .mobile-nav-toggle{display:none;background:transparent;border:none;font-size:20px}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,rgba(255,0,128,0.06),rgba(11,37,69,0.03));font-weight:600}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">IC</div>
+        <div>
+          <h1>Studio InContexxt</h1>
+          <div class="small muted">Traduceri • Meditații</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#servicii">Servicii</a></li>
+          <li><a href="#testimoniale">Testimoniale</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-nav-toggle" aria-expanded="false" aria-label="Meniu">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Profesional • Prompt • Flexibil</span>
+        <h2>Traduceri de calitate și meditații care aduc rezultate</h2>
+        <p>La Studio InContexxt oferim traduceri autorizate și neautorizate pentru documente, site-uri și materiale tehnice, precum și meditații private pentru elevi și studenți la limbi străine, matematică și materii umaniste.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact">Solicită o ofertă</a>
+          <a class="btn btn-ghost" href="#servicii">Vezi serviciile</a>
+        </div>
+
+        <div class="card" style="margin-top:20px">
+          <strong>De ce noi?</strong>
+          <ul class="small muted">
+            <li>Traducători nativi și verificatori de calitate</li>
+            <li>Meditații personalizate, cu planuri pe săptămâni</li>
+            <li>Livrare rapidă și termene flexibile</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Contact rapid</h3>
+        <p class="small muted">Trimite-ne câteva date și te contactăm în scurt timp (formular static).</p>
+        <form id="quickContact">
+          <input type="text" id="name" name="name" placeholder="Nume complet" required />
+          <input type="email" id="email" name="email" placeholder="Email" required />
+          <select id="service" name="service">
+            <option value="traduceri">Traduceri</option>
+            <option value="meditatii">Meditații</option>
+            <option value="ambele">Ambele</option>
+          </select>
+          <textarea id="message" name="message" placeholder="Spune-ne în câteva cuvinte ce ai nevoie..."></textarea>
+          <button type="submit" class="btn btn-primary">Trimite</button>
+        </form>
+        <p id="formResult" class="small muted" style="margin-top:12px;display:none"></p>
+      </aside>
+    </section>
+
+    <section id="servicii">
+      <h2>Serviciile noastre</h2>
+      <p class="muted">O gamă completă de soluții adaptate nevoilor tale.</p>
+      <div class="services">
+        <article class="service card">
+          <h3>Traduceri generale și specializate</h3>
+          <p>Traducem documente juridice, medicale, tehnice și marketing — atât pentru uz personal, cât și pentru publicare. Revizie inclusă.</p>
+        </article>
+        <article class="service card">
+          <h3>Traduceri autorizate</h3>
+          <p>Colaborăm cu traducători autorizați pentru documente oficiale (acte, certificate, contracte).</p>
+        </article>
+        <article class="service card">
+          <h3>Meditații individuale</h3>
+          <p>Sesiuni online sau față-în-față pentru liceu și facultate: limbi străine, mate, istorie, economie. Plan personalizat și teme.</p>
+        </article>
+        <article class="service card">
+          <h3>Pregătire examen / admitere</h3>
+          <p>Program de pregătire intens pentru examene, simulări și strategie de învățare — rezultate măsurabile.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="testimoniale">
+      <h2>Ce spun clienții</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <strong>Ana M.</strong>
+          <p class="small muted">„Profesionali și rapizi. Am primit traducerea jurată în 24h — recomand!”</p>
+        </div>
+        <div class="testimonial">
+          <strong>Matei P.</strong>
+          <p class="small muted">„Meditațiile m-au ajutat să iau notă mare la examen. Explicații clare și exerciții practice.”</p>
+        </div>
+        <div class="testimonial">
+          <strong>Irina C.</strong>
+          <p class="small muted">„Comunicare excelentă și termene respectate. Relație de lungă durată.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="muted">Trimite-ne un mesaj sau vezi informațiile noastre de contact.</p>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:16px">
+        <div class="card">
+          <h3>Trimite un mesaj</h3>
+          <form id="mainContact">
+            <input type="text" id="main_name" name="name" placeholder="Nume complet" required />
+            <input type="email" id="main_email" name="email" placeholder="Email" required />
+            <input type="text" id="topic" name="topic" placeholder="Subiect" />
+            <textarea id="main_message" name="message" placeholder="Descrie nevoia ta..."></textarea>
+            <button type="submit" class="btn btn-primary">Trimite mesaj</button>
+          </form>
+          <p id="mainResult" class="small muted" style="margin-top:10px;display:none"></p>
+        </div>
+
+        <aside class="card">
+          <h3>Informații</h3>
+          <p class="small muted">Email: contact@incontexxt.ro<br>Telefon: +40 700 000 000<br>Adresa: Str. Exemplu 12, București</p>
+          <div style="margin-top:12px">
+            <span class="pill">Program: L-V 09:00 - 18:00</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container foot">
+      <div>© <strong>Studio InContexxt</strong> — Toate drepturile rezervate</div>
+      <div style="margin-top:8px" class="small muted">Design simplu — culori: alb, magenta, albastru închis</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle (simple)
+    const toggle = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('nav ul');
+    if(toggle){
+      toggle.addEventListener('click', ()=>{
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        if(nav.style.display === 'flex') nav.style.display = 'none'; else nav.style.display = 'flex';
+      })
+    }
+
+    // Form handlers (static — simulate submission)
+    function handleForm(formId, resultId){
+      const form = document.getElementById(formId);
+      const result = document.getElementById(resultId);
+      if(!form) return;
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const data = new FormData(form);
+        const name = data.get('name') || 'Client';
+        // Simple validation
+        if(data.get('email') && String(data.get('email')).includes('@')){
+          result.style.display = 'block';
+          result.textContent = `Mulțumim, ${name}! Mesajul tău a fost primit (simulare). Te contactăm curând.`;
+          form.reset();
+          setTimeout(()=> result.style.display='none', 7000);
+        } else {
+          result.style.display = 'block';
+          result.textContent = 'Te rugăm să introduci un email valid.';
+        }
+      })
+    }
+    handleForm('quickContact','formResult');
+    handleForm('mainContact','mainResult');
+
+    // Smooth scroll for internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          const el = document.querySelector(href);
+          if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'});} 
+        }
+      })
+    })
+  </script>
+</body>
+</html>
