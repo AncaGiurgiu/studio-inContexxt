@@ -13,7 +13,7 @@
 <style>
 :root{
   --white:#fff;
-  --magenta:#ff0080;
+  --magenta:#d60e80;
   --dark-blue:#0b2545;
   --muted:#6b7280;
   --bg:#f6f8fb;
@@ -232,6 +232,33 @@ section{
   scroll-margin-top: 120px;
 }
 
+.language-image{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.language-image img{
+  width:100%;
+  max-width:320px;
+  border-radius:14px;
+  box-shadow:var(--shadow);
+}
+
+.despre{
+  display:flex;
+  gap:40px;
+  align-items:center;
+}
+
+#eu{
+  max-width:300px;
+  width:100%;
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  object-fit:cover;
+}
+
 
 /* FOOTER */
 footer{
@@ -248,6 +275,14 @@ footer{
   .hero{
     grid-template-columns:1fr;
     padding:40px 0;
+  }
+  .despre{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  #eu{
+    max-width:260px;
   }
   .services{
     grid-template-columns:1fr;
@@ -303,25 +338,30 @@ footer{
     <a class="btn btn-primary" href="https://wa.me/31684215935" id="heroBtn">Programare ședință gratuită (20 min)</a>
   </div>
 
-  <!-- <aside class="card">
-    <h3 id="quickContact">Contact rapid</h3>
-    <form id="quickContactForm">
-      <input type="text" name="name" placeholder="Nume complet" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <textarea name="message" placeholder="Mesaj"></textarea>
-      <button class="btn btn-primary" type="submit" id="sendBtn">Trimite</button>
-    </form>
-  </aside> -->
+<aside class="card language-image">
+  <img id="langImage" src="ro.png" alt="Romanian language" />
+</aside>
+
 </section>
 
 <section id="despre">
   <h2 id="aboutTitle">Despre mine</h2>
-  <p class="muted" id="aboutText">
-   Eu sunt Teodora, profesor licențiat și absolventă a Academiei de Profesori din Olanda (Docentenacademie). Am o dublă diplomă: studii universitare în Limbi Romanice și Cultură și calificare pedagogică oficială pentru predare. Predau limba olandeză de peste cinci ani și vorbesc fluent română, olandeză, engleză și spaniolă.
-Fiind eu însămi fostă elevă NT2, înțeleg perfect cât de provocator poate fi procesul. Din acest motiv, stilul meu de predare este calm, structurat și centrat pe nevoile cursantului. Lucrez cu o combinație echilibrată de explicații clare, aplicare practică și exerciții personalizate. Atmosfera în care predau este una sigură, prietenoasă și adaptată ritmului fiecăruia.
-Scopul meu este să te ajut să înveți limba olandeză într-un mod accesibil, logic și eficient, astfel încât să poți folosi limba cu încredere în viața de zi cu zi.
-  </p>
+
+  <div class="despre">
+<img id="eu" src="eu.jpg" alt="Teodora – profesor" />
+
+    <p class="muted" id="aboutText">
+      Eu sunt Teodora, profesor licențiat și absolventă a Academiei de Profesori din Olanda (Docentenacademie). Am o dublă diplomă: studii universitare în Limbi Romanice și Cultură și calificare pedagogică oficială pentru predare. Predau limba olandeză de peste cinci ani și vorbesc fluent română, olandeză, engleză și spaniolă.
+      <br><br>
+      Fiind eu însămi fostă elevă NT2, înțeleg perfect cât de provocator poate fi procesul. Din acest motiv, stilul meu de predare este calm, structurat și centrat pe nevoile cursantului.
+      <br><br>
+      Scopul meu este să te ajut să înveți limba olandeză într-un mod accesibil, logic și eficient.
+    </p>
+
+   
+  </div>
 </section>
+
 
 <section id="servicii">
   <h2 id="servicesTitle">Serviciile noastre</h2>
@@ -523,6 +563,12 @@ function setLang(lang){
     const el = document.getElementById(id);
     if(el && texts[lang][id]) el.innerHTML = texts[lang][id];
   });
+  const img = document.getElementById("langImage");
+if(img){
+  img.src = lang + ".png"; 
+  img.alt = "Language " + lang.toUpperCase();
+}
+
 }
 
 setLang("ro");
