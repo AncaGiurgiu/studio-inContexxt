@@ -322,9 +322,9 @@ footer{
 
     <!-- Selector limbă -->
     <select onchange="setLang(this.value)" id="langSelect">
+      <option value="nl">NL</option>
       <option value="ro">RO</option>
       <option value="en">EN</option>
-      <option value="nl">NL</option>
     </select>
   </div>
 </header>
@@ -437,13 +437,9 @@ footer{
 
 <section id="contact">
   <h2 id="contactTitle">Contact</h2>
-  <p>
-    📩 studioincontexxt@gmail.com<br>
-    📱 WhatsApp: +31684215935<br>
-    🕘 Luni–Vineri, 09:00–17:00<br>
-    🏢 CUI: 99083140
-  </p>
+  <p id="contactText"></p>
 </section>
+
 
 </main>
 
@@ -464,7 +460,7 @@ const texts = {
     heroText:`<b>Bine ai venit la Studio InContexxt!</b><br><br>
 Lecții personalizate de olandeză și servicii profesionale de traduceri.
 Fie că ești la început, te pregătești pentru examenul de integrare sau ai nevoie de o traducere rapidă aici vei primi ajutorul potrivit.`,
-    heroBtn:"Programare ședință gratuită (20 min)",
+    heroBtn:"Programare ședință de cunoaștere gratuită (20 min)",
     quickContact:"Contact rapid",
     sendBtn:"Trimite",
     aboutTitle:"Despre mine",
@@ -489,7 +485,14 @@ Scopul meu este să te ajut să înveți limba olandeză într-un mod accesibil,
   <li>discutăm obiectivele tale</li>
   <li>creăm împreună un plan personal pas cu pas</li>
 </ul>`,
-    contactTitle:"Contact"
+    contactTitle:"Contact",
+    contactText: `
+📩 E-mail: studioincontexxt@gmail.com<br>
+📱 WhatsApp: +31684215935<br>
+🏢 CUI: 99083140<br>
+📍 Lecții online, oriunde în lume
+`
+
   },
   en:{
     subtitle:"Translations • Tutoring",
@@ -519,7 +522,14 @@ My goal is to help you learn Dutch in an accessible, logical, and efficient way 
     servicesText:"Translations and personalized lessons.",
     pricesTitle:"Prices",
     pricesText:"Set individually after a free intake session.",
-    contactTitle:"Contact"
+    contactTitle:"Contact",
+    contactText: `
+📩 Email: studioincontexxt@gmail.com<br>
+📱 WhatsApp: +31684215935<br>
+🏢 Company Registration Number: 99083140<br>
+📍 Online lessons worldwide
+`
+
   },
   nl:{
     subtitle:"Vertalingen • Bijles",
@@ -548,8 +558,16 @@ Mijn doel is om je te helpen Nederlands op een toegankelijke, logische en effici
     servicesTitle:"Onze diensten",
     servicesText:"Vertalingen en persoonlijke lessen.",
     pricesTitle:"Prijzen",
-    pricesText:"Vastgesteld na een gratis intake.",
-    contactTitle:"Contact"
+    pricesText:"Vastgesteld na een gratis intake.
+    ",
+    contactTitle:"Contact",
+    contactText: `
+📩 E-mail: studioincontexxt@gmail.com<br>
+📱 WhatsApp: +31684215935<br>
+🏢 KVK: 99083140<br>
+📍 Online lessen wereldwijd
+`
+
   }
 };
 
@@ -564,7 +582,7 @@ function setLang(lang){
     "lessonsTitle","lessonsText",
     "servicesTitle","servicesText",
     "pricesTitle","pricesText",
-    "contactTitle"
+    "contactTitle","contactText"
   ];
   elems.forEach(id=>{
     const el = document.getElementById(id);
@@ -578,7 +596,7 @@ if(img){
 
 }
 
-setLang("ro");
+setLang("nl");
 </script>
 
 </body>
